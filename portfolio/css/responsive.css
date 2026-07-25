@@ -1,0 +1,68 @@
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+/* ---------- Nav compacta (<= 900px) ---------- */
+@media (max-width: 900px){
+  .nav__links{ gap: 14px; }
+  .nav__links a{ font-size: 0.76rem; }
+  .nav__num{ display: none; }
+}
+
+/* ---------- Tablet (<= 960px) ---------- */
+@media (max-width: 960px){
+  .hero__inner{
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .hero__visual{ order: -1; margin-bottom: 32px; }
+  .about{ grid-template-columns: 1fr; }
+  .about__side{ flex-direction: row; align-items: flex-start; }
+  .about__avatar{ width: 220px; flex-shrink: 0; }
+  .about__stats{ grid-template-columns: 1fr; flex: 1; }
+  .skills{ grid-template-columns: 1fr; gap: 32px; }
+  .projects{ grid-template-columns: repeat(2, 1fr); }
+  .channel{ grid-template-columns: 1fr; }
+  .channel__text{ order: 2; }
+  .contact__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Mobile (<= 640px) ---------- */
+@media (max-width: 640px){
+  .nav__links{
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav__links.is-open{ max-height: 320px; }
+  .nav__links a{
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+  }
+  .nav__toggle{ display: flex; }
+
+  .hero{ padding: 120px 20px 100px; }
+  .hero__actions{ flex-direction: column; }
+  .hero__actions .btn{ text-align: center; }
+
+  .terminal__body{ font-size: 0.82rem; min-height: 190px; }
+  .terminal--floating{ right: 0; bottom: -28px; width: min(240px, 70%); }
+  .terminal--floating .terminal__body{ font-size: 0.65rem; min-height: 100px; padding: 12px; }
+  .hero__photo{ max-width: 280px; }
+
+  .section{ padding: 80px 20px; }
+  .about__side{ flex-direction: column; }
+  .about__avatar{ width: 100%; max-width: 220px; margin: 0 auto; }
+  .about__stats{ grid-template-columns: 1fr; }
+  .skill{ grid-template-columns: 100px 1fr; }
+  .projects{ grid-template-columns: 1fr; }
+  .contact__grid{ grid-template-columns: 1fr; }
+  .contact__lead{ margin-top: 0; }
+}
