@@ -113,12 +113,25 @@ a:focus-visible, button:focus-visible{
 .nav__links a{
   font-family: var(--font-display);
   font-size: 0.85rem;
-  color: var(--text-dim);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  position: relative;
+  padding-bottom: 4px;
   transition: color 0.2s ease;
-  display: flex; align-items: baseline; gap: 6px;
 }
-.nav__links a:hover{ color: var(--text); }
-.nav__num{ color: var(--text-faint); font-size: 0.72rem; }
+.nav__links a::after{
+  content: '';
+  position: absolute;
+  left: 0; right: 100%;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gradient);
+  transition: right 0.25s ease;
+}
+.nav__links a:hover{ color: var(--blue); }
+.nav__links a:hover::after{ right: 0; }
 
 .nav__toggle{
   display: none;
@@ -639,8 +652,20 @@ a:focus-visible, button:focus-visible{
   font-size: 1.3rem;
   color: var(--blue);
 }
+.contact-card__icon--img{
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .contact-card__label{ font-family: var(--font-display); font-size: 1rem; font-weight: 600; }
 .contact-card__sub{ font-size: 0.85rem; color: var(--text-dim); }
+
+.channel__playlists-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
 
 /* =========================================================
    FOOTER

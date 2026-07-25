@@ -6,7 +6,6 @@
 @media (max-width: 900px){
   .nav__links{ gap: 14px; }
   .nav__links a{ font-size: 0.76rem; }
-  .nav__num{ display: none; }
 }
 
 /* ---------- Tablet (<= 960px) ---------- */
